@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2vw2m0uq8R9KOQqB1QQ120y+vJ0698RmmiDFkZuv5QLPTOAySgoA3Z/Mw5UlJnzkeHVMcS3Pm0qrzohE+49mVA==",
+  "success": true,
+  "projectFilePath": "C:\\School\\devops\\Webscraper\\CaseStudy\\CaseStudy\\CaseStudy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\seppe\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\seppe\\.nuget\\packages\\selenium.webdriver\\4.7.0\\selenium.webdriver.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
