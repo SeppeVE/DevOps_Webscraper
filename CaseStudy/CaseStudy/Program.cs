@@ -1,21 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.IO;
-using System.Reflection;
-using System.Threading;
-using OpenQA.Selenium.Safari;
-using System.Collections.Generic;
-using System.Web;
-using OpenQA.Selenium.DevTools.V106.Tethering;
-using System.Xml.Linq;
-
 using Newtonsoft.Json;
-using System.Linq;
 using CaseStudy;
 
 namespace webscraping
@@ -85,7 +70,6 @@ namespace webscraping
             accepteer.Click();
             Thread.Sleep(200);
 
-            //var video = driver.FindElements(By.XPath("//*[@id=\"contents\"]/ytd-video-renderer"));
             var titleMain = driver.FindElements(By.XPath("//*[@id=\"video-title\"]/yt-formatted-string"));
             var viewsMain = driver.FindElements(By.XPath("//*[@id=\"metadata-line\"]/span[1]"));
             var uploaderMain = driver.FindElements(By.XPath("//*[@id=\"channel-info\"]/a"));
@@ -105,10 +89,6 @@ namespace webscraping
                     var uploadeeNew = uploadee.Substring(uploadee.LastIndexOf('@'));
                     var link = linkMain.ElementAt(i);
                     var url = link.GetAttribute("href");
-                    //Console.WriteLine(title.Text);
-                    //Console.WriteLine(views.Text);
-                    //Console.WriteLine(uploadeeNew);
-                    //Console.WriteLine(url);
 
                     Upload upload = new Upload()
                     {
@@ -200,10 +180,6 @@ namespace webscraping
 
         static void tweedehands()
         {
-            
-            // driver.Navigate().GoToUrl(" https://www.youtube.com/c/LambdaTest/videos");
-            // var accepteer = driver.FindElement(By.XPath("//*[@id='yDmH0d']/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/form[2]/div/div/button/span"));
-            // accepteer.Click();
 
             Console.WriteLine("\n");
             Console.WriteLine("1. Marktplaats");
@@ -222,6 +198,7 @@ namespace webscraping
             string model = Console.ReadLine();
 
             IWebDriver driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
 
             if (site == "1")
             {
@@ -229,7 +206,7 @@ namespace webscraping
                 var linkBrand = originalLink1.Replace("brand", merk);
                 var linkBrandModel = linkBrand.Replace("make", model);
 
-                driver.Navigate().GoToUrl(linkBrandModel); //https://www.marktplaats.nl/
+                driver.Navigate().GoToUrl(linkBrandModel);
                 Thread.Sleep(200);
             }
             else
